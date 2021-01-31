@@ -1,6 +1,10 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import SEO from '../src/components/SEO'
-import db from '../db.json'
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/prop-types */
+import React from 'react';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+
+import SEO from '../src/components/SEO';
+import db from '../db.json';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -24,19 +28,19 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
-`
+`;
 
-const theme = db.theme
+const { theme } = db;
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <SEO
-        title='Senhor dos Anéis'
-        siteName='AluraQuiz'
-        pageURL='https://aluraquiz-omega-bice.vercel.app/'
-        shortDescription='Versão do AluraQuiz para fãs de LotR!'
-        description='Um quiz desenvolvido para fãs de Senhor dos Anéis durante a imersão Next.js da Alura =)'
+        title="Senhor dos Anéis"
+        siteName="AluraQuiz"
+        pageURL="https://aluraquiz-omega-bice.vercel.app/"
+        shortDescription="Versão do AluraQuiz para fãs de LotR!"
+        description="Um quiz desenvolvido para fãs de Senhor dos Anéis durante a imersão Next.js da Alura =)"
         ogImg={db.bg}
       >
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -47,5 +51,5 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
       </ThemeProvider>
     </>
-  )
+  );
 }

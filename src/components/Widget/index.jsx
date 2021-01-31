@@ -1,5 +1,6 @@
-import styled from 'styled-components'
-import { rgba } from 'polished'
+import React from 'react';
+import styled from 'styled-components';
+import { rgba } from 'polished';
 
 // const bgColor = ({ theme }) => theme.borderRadius
 
@@ -7,7 +8,7 @@ const Box = styled.div`
   margin-top: 24px;
   margin-bottom: 24px;
   border: 1px solid  ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => rgba(theme.colors.mainBg, .5)};
+  background-color: ${({ theme }) => rgba(theme.colors.mainBg, 0.5)};
   border-radius: ${({ theme }) => theme.borderRadius};
   backdrop-filter: blur(3px);
   overflow: hidden;
@@ -24,7 +25,16 @@ const Box = styled.div`
     font-weight: 400;
     line-height: 1.275;
   }
-`
+`;
+
+// eslint-disable-next-line react/prop-types
+export default function Widget({ children }) {
+  return (
+    <Box>
+      {children}
+    </Box>
+  );
+}
 
 Widget.Header = styled.div`
   display: flex;
@@ -36,7 +46,7 @@ Widget.Header = styled.div`
   * {
     margin: 0;
   }
-`
+`;
 
 Widget.Content = styled.div`
   padding: 24px 32px 32px 32px;
@@ -50,12 +60,4 @@ Widget.Content = styled.div`
     list-style: none;
     padding: 0;
   }
-`
-
-export default function Widget(props) {
-  return (
-    <Box>
-      {props.children}
-    </Box>
-  )
-}
+`;

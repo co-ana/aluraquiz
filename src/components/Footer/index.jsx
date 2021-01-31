@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const FooterWrapper = styled.div`
   display: flex;
@@ -26,20 +27,22 @@ const FooterWrapper = styled.div`
       text-decoration: underline;
     }
   }
-`
+`;
 
-export default function Footer(props) {
+export default function Footer() {
   return (
-    <FooterWrapper {...props}>
-      <a href="https://www.alura.com.br/" target="_blank">
+    <FooterWrapper>
+      <a href="https://www.alura.com.br/" target="_blank" rel="noreferrer">
         <img src="https://www.alura.com.br/assets/img/alura-logo-white.1570550707.svg" alt="Logo Alura" />
       </a>
       <p>
-        Orgulhosamente criado durante a {' '}
-        <a href="https://www.alura.com.br/" target="_blank">
+        Orgulhosamente criado durante a
+        {' '}
+        {' '}
+        <a href="https://www.alura.com.br/" target="_blank" rel="noreferrer">
           <span>Imersão React da Alura!</span>
         </a>
       </p>
     </FooterWrapper>
-  )
+  );
 }

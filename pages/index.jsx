@@ -1,11 +1,13 @@
-import QuizLogo from '../src/components/QuizLogo'
-import QuizContainer from '../src/components/QuizContainer'
-import QuizBackground from '../src/components/QuizBackground'
-import Widget from '../src/components/Widget'
-import GitHubCorner from '../src/components/GitHubCorner'
-import Footer from '../src/components/Footer'
+import React from 'react';
 
-import db from '../db.json'
+import QuizLogo from '../src/components/QuizLogo';
+import QuizContainer from '../src/components/QuizContainer';
+import QuizBackground from '../src/components/QuizBackground';
+import Widget from '../src/components/Widget';
+import GitHubCorner from '../src/components/GitHubCorner';
+import Footer from '../src/components/Footer';
+
+import db from '../db.json';
 
 export default function Home() {
   return (
@@ -31,5 +33,5 @@ export default function Home() {
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/co-ana" />
     </QuizBackground>
-  )
+  );
 }

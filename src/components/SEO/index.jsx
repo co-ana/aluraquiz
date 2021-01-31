@@ -1,12 +1,14 @@
-import Head from 'next/head'
-// import react from 'react'
-import PropTypes from 'prop-types'
+/* eslint-disable react/prop-types */
+import React from 'react';
+import Head from 'next/head';
 
-export default function SEO({title, siteName, pageURL, shortDescription, description, ogImg, ...props}) {
+export default function SEO({
+  children, title, siteName, pageURL, shortDescription, description, ogImg,
+}) {
   return (
     <Head>
       {/* Primary Meta Tags */}
-      <title>{siteName + ' | ' + title}</title>
+      <title>{`${siteName} | ${title}`}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
 
@@ -24,16 +26,7 @@ export default function SEO({title, siteName, pageURL, shortDescription, descrip
       <meta property="twitter:description" content={shortDescription} />
       <meta property="twitter:image" content={ogImg} />
 
-      {props.children}
+      {children}
     </Head>
-  )
-}
-
-SEO.propTypes = {
-  title: PropTypes.string,
-  siteName: PropTypes.string,
-  pageURL: PropTypes.string,
-  shortDescription: PropTypes.string,
-  description: PropTypes.string,
-  ogImg: PropTypes.string
+  );
 }
