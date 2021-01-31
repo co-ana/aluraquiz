@@ -1,3 +1,4 @@
+import QuizLogo from '../src/components/QuizLogo'
 import QuizContainer from '../src/components/QuizContainer'
 import QuizBackground from '../src/components/QuizBackground'
 import Widget from '../src/components/Widget'
@@ -10,32 +11,25 @@ export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
+        <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>The Legend of Zelda</h1>
+            <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>Teste os seus conhecimentos sobre Zelda e divirta-se criando o seu AluraQuiz!</p>
-            <p>Diz aí seu nome pra jogar :)</p>
-            <a>Jogar!</a>
+            <p>{db.description}</p>
           </Widget.Content>
         </Widget>
         <Widget>
-          <Widget.Header>
-            <h2>Quizes da Galera</h2>
-          </Widget.Header>
           <Widget.Content>
-            <p>Dá uma olhada nesses quizes incríveis que o pessoal da Imersão Alguma coisa fez:</p>
-            <ul>
-              <li>clebinhodj/showdomilhaoalura</li>
-              <li>clebinhodj/showdomilhaoalura</li>
-              <li>clebinhodj/showdomilhaoalura</li>
-            </ul>
+            <h1>Quizes da Galera</h1>
+
+            <p>lorem ipsum dolor sit amet...</p>
           </Widget.Content>
         </Widget>
-        <GitHubCorner />
         <Footer />
       </QuizContainer>
+      <GitHubCorner projectUrl="https://github.com/co-ana" />
     </QuizBackground>
   )
 }
