@@ -1,10 +1,10 @@
-import Helmet from 'react-helmet'
-import react from 'react'
+import Head from 'next/head'
+// import react from 'react'
 import PropTypes from 'prop-types'
 
 export default function SEO({title, siteName, pageURL, shortDescription, description, ogImg, ...props}) {
   return (
-    <Helmet>
+    <Head>
       {/* Primary Meta Tags */}
       <title>{siteName + ' | ' + title}</title>
       <meta name="title" content={title} />
@@ -23,8 +23,9 @@ export default function SEO({title, siteName, pageURL, shortDescription, descrip
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={shortDescription} />
       <meta property="twitter:image" content={ogImg} />
+
       {props.children}
-    </Helmet>
+    </Head>
   )
 }
 
