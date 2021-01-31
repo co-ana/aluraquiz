@@ -1,107 +1,41 @@
-import styled from 'styled-components'
+import QuizContainer from '../src/components/QuizContainer'
+import QuizBackground from '../src/components/QuizBackground'
+import Widget from '../src/components/Widget'
+import GitHubCorner from '../src/components/GitHubCorner'
+import Footer from '../src/components/Footer'
+
 import db from '../db.json'
-
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`
-
-const BackgroundImage = styled.div`
-  background-image: url(${db.bg});
-  background-position: center;
-  background-size: cover;
-  flex: 1;
-`
-
-const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`
-
-const Widget = styled.div`
-  margin-top: 24px;
-  margin-bottom: 24px;
-  border: 1px solid  ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => theme.colors.mainBg};
-  border-radius: ${({ theme }) => theme.borderRadius};
-  overflow: hidden;
-
-  h1, h2, h3 {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1;
-    margin-bottom: 0;
-  }
-
-  p {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1;
-  }
-`
-
-Widget.Header = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 18px 32px;
-  background-color: ${({ theme }) => theme.colors.primary};
-
-  * {
-    margin: 0;
-  }
-`
-
-Widget.Content = styled.div`
-  padding: 24px 32px 32px 32px;
-  & > *:first-child {
-    margin-top: 0;
-  }
-  & > *:last-child {
-    margin-bottom: 0;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-`
 
 export default function Home() {
   return (
-    <BackgroundImage>
+    <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
-        <h1>Quiz da galera..</h1>
         <Widget>
           <Widget.Header>
-            <h2>Widget 1</h2>
+            <h1>The Legend of Zelda</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>idjfosifjsf</p>
+            <p>Teste os seus conhecimentos sobre Zelda e divirta-se criando o seu AluraQuiz!</p>
+            <p>Diz aí seu nome pra jogar :)</p>
+            <a>Jogar!</a>
           </Widget.Content>
         </Widget>
         <Widget>
           <Widget.Header>
-            <h2>Widget 1</h2>
+            <h2>Quizes da Galera</h2>
           </Widget.Header>
           <Widget.Content>
-            <p>idjfosifjsf</p>
+            <p>Dá uma olhada nesses quizes incríveis que o pessoal da Imersão Alguma coisa fez:</p>
+            <ul>
+              <li>clebinhodj/showdomilhaoalura</li>
+              <li>clebinhodj/showdomilhaoalura</li>
+              <li>clebinhodj/showdomilhaoalura</li>
+            </ul>
           </Widget.Content>
         </Widget>
-        <Widget>
-          <Widget.Header>
-            <h2>Widget 1</h2>
-          </Widget.Header>
-          <Widget.Content>
-            <p>idjfosifjsf</p>
-          </Widget.Content>
-        </Widget>
+        <GitHubCorner />
+        <Footer />
       </QuizContainer>
-    </BackgroundImage>
+    </QuizBackground>
   )
 }
