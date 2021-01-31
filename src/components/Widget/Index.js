@@ -1,11 +1,15 @@
 import styled from 'styled-components'
+import { rgba } from 'polished'
+
+// const bgColor = ({ theme }) => theme.borderRadius
 
 const Box = styled.div`
   margin-top: 24px;
   margin-bottom: 24px;
   border: 1px solid  ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => theme.colors.mainBg};
+  background-color: ${({ theme }) => rgba(theme.colors.mainBg, .5)};
   border-radius: ${({ theme }) => theme.borderRadius};
+  backdrop-filter: blur(3px);
   overflow: hidden;
 
   h1, h2, h3 {
